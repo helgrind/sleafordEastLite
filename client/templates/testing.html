@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}Interface Testing{% endblock %}
+{% block head %}
+    {{ super() }}
+    <script type="text/javascript" src="/static/js/testing.js"></script>
+{% endblock %}
+{% block content %}
+    <h1>Interface Testing</h1>
+    <h2>Inputs</h2>
+    <div id="inputs">
+        <table>
+            <tr>
+                <th>System Name</th>
+                <th>User Name</th>
+                <th>State</th>
+                <th>Overrides</th>
+            </tr>
+        </table>
+    </div>
+    <h2>Outputs</h2>
+    <div id="outputs">
+        <table>
+            <tr>
+                <th>System Name</th>
+                <th>User Name</th>
+                <th>State</th>
+                <th>Overrides</th>
+            </tr>
+        </table>
+    </div>
+{% endblock %}

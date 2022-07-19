@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <script type="text/javascript" src="/static/js/vendor/jquery-3.6.0.js"></script>
+    <script type="text/javascript" src="/static/js/vendor/underscore.js"></script>
+    <script type="text/javascript" src="/static/js/vendor/backbone.js"></script>
+    <title>{% block title %}{% endblock %} - Sleaford East Lite Simulator</title>
+    {% endblock %}
+</head>
+<body>
+    <div id="content">{% block content %}{% endblock %}</div>
+</body>
+</html>
