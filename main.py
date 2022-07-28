@@ -1,4 +1,4 @@
-import ssl, json
+import ssl, json, asyncio
 from starlette.applications import Starlette
 from starlette.responses import PlainTextResponse
 from starlette.routing import Route, Mount, WebSocketRoute
@@ -16,9 +16,17 @@ inputs = [
     {"sysname":"test", "username":"123"}
 ]
 
+async def update_interfaces(io):
+    while True:
+        await asyncio.gather(
+            asyncio.to_thread(io.update),
+            asyncio.sleep(1)
+        )
+
 def startup():
     sim = Simulator(app)
     io = Interfaces(app)
+    asyncio.create_task(update_interfaces(io))
 
 def shutdown():
     """
